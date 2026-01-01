@@ -1,0 +1,84 @@
+# ========================================
+# OS / Editor garbage
+# ========================================
+
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+.vscode/
+.idea/
+*.code-workspace
+
+# ========================================
+# Shell / Tool generated files
+# ========================================
+
+.zcompdump*
+.zsh_history
+.zsh_sessions/
+.zshrc.pre-oh-my-zsh
+
+node_modules/
+dist/
+build/
+
+# ========================================
+# Package manager / build artifacts
+# ========================================
+
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# Secrets & local overrides
+# ========================================
+
+*.env
+*.env.*
+.envrc
+.env.local
+
+secrets/
+**/*secret*
+**/*token*
+**/*password*
+
+# ========================================
+# SSH / GPG (never commit these)
+# ========================================
+
+.ssh/
+.gnupg/
+
+# ========================================
+# OS package manager state (brew, etc.)
+# ========================================
+
+Brewfile.lock.json
+brewlist.txt
+
+# ========================================
+# Stow / symlink management noise
+# ========================================
+
+.stow-local-ignore
+.stowrc
+.stow-state
+
+# ========================================
+# Logs
+# ========================================
+
+*.log
+logs/

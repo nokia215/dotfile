@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+set -eu
+
+# ctxp: thin wrapper to launch llm-ctx
+# Resolves the script directory to find sibling llm-ctx.sh
+
+script_dir() {
+  # Resolve directory of this script, following symlinks when possible
+  # portable to POSIX sh without readlink -f
+  _src=$0
+  # If launched via a symlink, try to resolve one hop
+  if command -v readlink >/dev/null 2>&1; then
+    _link=$(readlink "$0" 2>/dev/null || true)
+    if [ -n "${_link:-}" ]; then _src=$_link; fi
+  fi
+  _dir=$(dirname -- "$_src")
+  cd "$_dir" >/dev/null 2>&1 || exit 1
+  pwd -P
+}
+
+DIR=$(script_dir)
+exec "$DIR/llm-ctx.sh" "$@"
