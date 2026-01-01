@@ -1,9 +1,6 @@
 # ~/.zshenv
 # Keep this file minimal: it runs for ALL zsh invocations.
 
-# Rust (if you really need it globally)
-[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
@@ -11,10 +8,12 @@ export VISUAL="$EDITOR"
 typeset -U path PATH
 
 # Personal bins
-if [[ -d "$HOME/bin" ]]; then
-  path=("$HOME/bin" $path)
-fi
-
+# Prefer XDG-style user binaries.
 if [[ -d "$HOME/.local/bin" ]]; then
   path=("$HOME/.local/bin" $path)
+fi
+
+# Legacy: keep only if you intentionally use ~/bin
+if [[ -d "$HOME/bin" ]]; then
+  path=("$HOME/bin" $path)
 fi

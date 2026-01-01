@@ -1,0 +1,21 @@
+# macOS metadata
+(^|/)\.DS_Store$
+(^|/)\.AppleDouble($|/)
+(^|/)Icon(\r)?$
+
+# Git & VCS
+(^|/)\.git($|/)
+(^|/)\.gitignore$
+(^|/)\.gitattributes$
+(^|/)\.gitmodules$
+
+# Editors/IDEs
+(^|/)\.vscode($|/)
+(^|/)\.idea($|/)
+(^|/)#.*#$
+(^|/)\.#.*$
+(~|\.bak|\.swp|\.swo|\.tmp)$
+
+# Common top-level docs that shouldn't be stowed from packages
+(^|/)README(\.md)?$
+(^|/)LICENSE(\.md)?$

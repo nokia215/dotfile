@@ -1,0 +1,23 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    editor = nvim
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    # use n and N to move between diff sections
+    navigate = true
+    # set dark/light explicitly, or omit for auto-detection
+    dark = true
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    colorMoved = default
